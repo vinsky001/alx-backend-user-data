@@ -8,5 +8,5 @@ from .auth import Auth
 
 
 class SessionAuth(Auth):
-     """Session authentication class"""
-     user_id_by_session_id = {}
+    """Session authentication class"""
+    user_id_by_session_id = {}
