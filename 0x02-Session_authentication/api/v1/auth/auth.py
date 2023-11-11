@@ -13,10 +13,13 @@ class Auth:
         """"
         Returns a cookie session from a request
         """
-        if request is not None:
-            return request.cookies.get(getenv('SESSION_NAME'))
-        return None
-            
+        if request is None:
+            return None
+        session_name =  getenv('SESSION_NAME')
+        if session_name is None:
+            return None
+        return  request.cookie.get(session_name)
+
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """Checks if a path requires authentication.
         """
