@@ -13,7 +13,7 @@ class Auth:
         """"
         Returns a cookie session from a request
         """
-        if request is None:
+        if request is not None:
             return request.cookies.get(getenv('SESSION_NAME'))
         return None
             
