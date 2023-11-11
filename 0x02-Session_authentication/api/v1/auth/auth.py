@@ -9,6 +9,14 @@ from flask import request
 class Auth:
     """Authentication class.
     """
+    def session_cookie(self, request=None):
+        """"
+        Returns a cookie session from a request
+        """
+        if request is None:
+            return request.cookies(.get(getenv('SESSION_NAME'))
+        return None
+            
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """Checks if a path requires authentication.
         """
