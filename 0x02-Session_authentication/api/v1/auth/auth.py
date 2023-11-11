@@ -14,7 +14,7 @@ class Auth:
         Returns a cookie session from a request
         """
         if request is None:
-            return request.cookies(.get(getenv('SESSION_NAME'))
+            return request.cookies.get(getenv('SESSION_NAME'))
         return None
             
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
