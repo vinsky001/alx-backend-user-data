@@ -42,5 +42,4 @@ class DB:
             # This catches integrity errors
             self._session.rollback()
             user = None
-            print(f"Error adding user: {e}")
         return user
