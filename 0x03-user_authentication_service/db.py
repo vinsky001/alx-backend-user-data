@@ -38,13 +38,9 @@ class DB:
             user = User(email=email, hashed_password=hashed_password)
             self._session.add(user)
             self._session.commit()
-        except sqlalchemy.exc.IntegrityError as e:
+        except Exception as e:
             # This catches integrity errors
             self._session.rollback()
             user = None
             print(f"Error adding user: {e}")
-        except Exception as e:
-            # Catch more general exceptions for debugging purposes
-            self._session.rollback()
-            user = None
-            return user
+        return user
