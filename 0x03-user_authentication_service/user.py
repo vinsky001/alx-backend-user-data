@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Conatains a SQLAlchemy model named User for a database table named users
+Contains a SQLAlchemy model named User for a database table named users
 """
 
 from sqlalchemy.ext.declarative import declarative_base
