@@ -2,9 +2,9 @@
 """Basic Flask app"""
 
 from flask import Flask, jsonify, Abort, redirect, request
+from auth import Auth
 
-
-app = flask(__name__)
+app = Flask(__name__)
 AUTH = Auth()
 
 
