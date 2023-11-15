@@ -13,6 +13,7 @@ def root():
     """Return a dummy JSON payload"""
     return jsonify({"message": "Bienvenue"})
 
+
 @app.route('/users', methods=['POST'], strict_slashes=False)
 def users():
     """Register new user"""
