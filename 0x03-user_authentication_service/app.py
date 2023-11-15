@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """Basic Flask app"""
 
-from flask import Flask, jsonify, Abort, redirect, request
+from flask import Flask, abort, jsonify, redirect, request
 from auth import Auth
 
 app = Flask(__name__)
 AUTH = Auth()
 
 
-@app.route('/', method=['GET'], strict_slashes=False)
+@app.route('/', methods=["GET"], strict_slashes=False)
 def root():
     """Return a dummy JSON payload"""
     return jsonify({"message": "Bienvenue"})
