@@ -6,7 +6,7 @@ Authentication module
 import bcrypt
 from db import DB
 from user import User
-from uuid import uuid4
+import uuid
 
 
 def _hash_password(password: str) -> str:
@@ -39,6 +39,9 @@ class Auth:
         except Exception:
             return False
         return bcrypt.checkpw(password.encode('utf-8'), user.hashed_password)
+
+    def _generate_uuid(self) -> str:
+        return str(uuid.uuid4())
 
     def create_session(self, email: str) -> str:
         """Create a session ID for user and return it"""
