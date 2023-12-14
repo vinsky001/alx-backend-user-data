@@ -72,7 +72,7 @@ class Auth:
         """Generate a password reset token"""
         try:
             user = self._db.find_user_by(email=email)
-        except UserNotFoundError as e:
+        except UserNotFoundError:
             raise ValueError("User DNE")
         reset_token = str(uuid.uuid4())
         self._db.update_user(user.id, reset_token=reset_token)
